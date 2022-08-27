@@ -1,5 +1,7 @@
 //By convention, class names are capitalized
 
+import HW1.Time;
+
 public class HelloWorld
 {
 
