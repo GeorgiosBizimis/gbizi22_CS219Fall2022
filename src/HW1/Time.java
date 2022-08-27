@@ -1,3 +1,5 @@
+package HW1;
+
 public final class Time {
 
     //Called by HelloWorld
