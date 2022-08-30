@@ -12,13 +12,13 @@ public final class Time {
         int minute = 6;
         int second = 37;
 
-        final float hour_in_seconds = calculate_in_seconds(hour, minute, second);
+        final double hour_in_seconds = calculate_in_seconds(hour, minute, second);
         System.out.println(hour_in_seconds + " seconds have passed since midnight.");
 
-        final float seconds_until_midnight =  total_seconds - hour_in_seconds;
+        final double seconds_until_midnight =  total_seconds - hour_in_seconds;
         System.out.println("Also, " + seconds_until_midnight + " remain until the day ends");
 
-        final float percentage_of_time_passed = (hour_in_seconds/total_seconds) * 100;
+        final double percentage_of_time_passed = (hour_in_seconds/total_seconds) * 100;
         System.out.println(percentage_of_time_passed + "% of the day has passed.");
 
         // The exercise requires to change the value of the initial variables to reflect the new time
@@ -28,7 +28,7 @@ public final class Time {
         minute = 18;
         second = 57;
 
-        final float new_hour_in_seconds = calculate_in_seconds(hour, minute, second);
+        final double new_hour_in_seconds = calculate_in_seconds(hour, minute, second);
         final int seconds_that_have_passed = (int)(new_hour_in_seconds - hour_in_seconds);
 
         final int new_hour = seconds_that_have_passed/3600;
