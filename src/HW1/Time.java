@@ -2,8 +2,12 @@ package HW1;
 
 public final class Time {
 
-    //Called by HelloWorld
-    public static void Clock()
+    private static float calculate_in_seconds(int hour, int minute, int second)
+    {
+        return (hour * 3600) + (minute * 60) + second;
+    }
+
+    public static void main(String[] args)
     {
         final int total_seconds = 86400; //Total amount of seconds in a day
 
@@ -60,9 +64,6 @@ public final class Time {
         //Still it would make even more sense to introduce new variables for the new time.
     }
 
-    private static float calculate_in_seconds(int hour, int minute, int second)
-    {
-        return (hour * 3600) + (minute * 60) + second;
-    }
+
 
 }
