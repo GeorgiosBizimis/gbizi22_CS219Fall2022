@@ -1,6 +1,7 @@
 package HW1;
 
-public final class Time {
+public final class Time
+{
 
     private static float calculate_in_seconds(int hour, int minute, int second)
     {
@@ -63,7 +64,5 @@ public final class Time {
 
         //Still it would make even more sense to introduce new variables for the new time.
     }
-
-
 
 }
