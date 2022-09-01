@@ -1,3 +1,5 @@
+package Utility;
+
 public class Investment
 {
     public static double Investment(double c, double r, int t, int n)
