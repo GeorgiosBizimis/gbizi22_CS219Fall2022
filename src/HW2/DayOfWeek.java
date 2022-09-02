@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public final class DayOfWeek
 {
+
     private static int dayofweek(int month, int day, int year)
     {
         final int y = year - (14 - month)/12;
