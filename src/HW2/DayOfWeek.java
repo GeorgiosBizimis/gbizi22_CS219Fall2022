@@ -1,3 +1,9 @@
+/*
+ *  Georgios Bizimis
+ *  9 / 7 / 2022
+ *  HW2
+ */
+
 package HW2;
 
 import java.util.Scanner;
@@ -29,7 +35,7 @@ public final class DayOfWeek
         System.out.println(day_number);
 
         // ---or even better---
-        System.out.println(day_name(day_number));
+        System.out.printf("The day of the week for %d/%d/%d is %s.", month, day, year, day_name(day_number));
     }
 
     private static String day_name(int day_number)
