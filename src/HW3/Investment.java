@@ -6,6 +6,7 @@
 
 package HW3;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Investment
@@ -17,12 +18,9 @@ public class Investment
 
     public static void main(String[] args)
     {
-        /*
-         * SORRY FOR MY PROGRAM'S USE OF THE COMMA ',' AS THE DECIMAL SEPARATOR, INSTEAD OF THE DOT '.'.
-         * FROM WHAT I UNDERSTAND THIS HAPPENS BECAUSE MY JVM HAS EUROPEAN SETTINGS OR SOMETHING LIKE THAT.
-         * IN ORDER TO BE CONSISTENT I USED THAT NOTATION IN MY OUTPUT STRINGS AS WELL.
-         * MAYBE WHEN YOU RUN THE PROGRAM THE SEPARATOR WILL BE THE DOT '.', BUT I CANNOT BE SURE.
-         */
+
+        //NEEDED TO FIX AN ERROR I HAD WITH THE DECIMAL SEPARATOR BEING ',' (EUROPEAN NOTATION) INSTEAD OF '.'
+        Locale.setDefault(Locale.US);
 
         System.out.println("----------------------\n\u001B[1mHW3. Validating Input." +
                 "\nReturn on Investment\n\u001B[0m----------------------\n");
@@ -39,7 +37,6 @@ public class Investment
         }
         else {
             System.out.printf("Error: please enter a decimal number. You entered \"%s\".", kbd.next());
-            System.out.println("\nThe decimal separator for different JVMs is ','");
             return; //exit main
         }
         if (c < 0)
@@ -58,13 +55,12 @@ public class Investment
         }
         else {
             System.out.printf("Error: please enter a decimal number. You entered \"%s\".", kbd.next());
-            System.out.println("\nThe decimal separator for different JVMs is ','");
             return; //exit main
         }
         if (r < 0 || r > 1)
         {
             System.out.printf("Error: interest rate should be expressed as a decimal between 0 and 1.\n" +
-                    "For example 8%% should be entered as 0,08. You entered %.2f.", r);
+                    "For example 8%% should be entered as '.8'. You entered %.2f.", r);
             return;
         }
         //--------------------------------------------------------------------
