@@ -115,7 +115,12 @@ you
      */
     public static void stars(int n)
     {
-        // fill in code
+        //It is a void function because it prints the stars directly from the body of the method and does not return the stars
+        //in the form of a string.
+        for(int i = 0; i <= n; i++)
+        {
+            System.out.print('*');
+        }
     }
 
     /*
@@ -135,7 +140,14 @@ you
      */
     public static void triangle(int n)
     {
-        // fill in code
+        for(int i = 0; i <= n; i++)
+        {
+            System.out.println();
+            for (int x = 0; x <= i; x++)
+            {
+                System.out.print('*');
+            }
+        }
     }
 
     /*
@@ -157,7 +169,28 @@ you
      */
     public static void fizzbuzz(int n)
     {
-        // fill in code
+        System.out.println();
+        for(int i = 1; i <= n; i++)
+        {
+            if(i % 3 == 0 && i % 5 == 0)
+            {
+                System.out.print("fizz buzz");
+            }
+            else if(i % 3 == 0)
+            {
+                System.out.print("fizz");
+            }
+            else if(i % 5 == 0)
+            {
+                System.out.print("buzz");
+            }
+            else
+            {
+                System.out.print(i);
+            }
+
+            if(i < n) System.out.print(", ");
+        }
     }
 
     /*
@@ -171,7 +204,16 @@ you
      */
     public static boolean isPalindrome(int n)
     {
-        return false; // shut up error message
+        final int original = n;
+        System.out.println();
+        int reversed = 0, remainder;
+        while (n != 0) {
+            remainder = n % 10;
+            reversed = reversed * 10 + remainder;
+            n /= 10;
+        }
+
+        return original == reversed; // shut up error message
     }
 
     /*
@@ -192,7 +234,18 @@ asterisks.
      */
     public static void staircase(int n)
     {
-        // fill in code here
+        for(int i = 0; i <= n; i++)
+        {
+            System.out.println();
+            for(int x = 0; x <= n - i; x++)
+            {
+                System.out.print(' ');
+            }
+            for(int x = 0; x <= i; x++)
+            {
+                System.out.print('*');
+            }
+        }
     }
 
     /*
@@ -216,7 +269,13 @@ n
      */
     public static boolean perfect(int n)
     {
-        return false;   // shut up error message
+        System.out.println();
+        int sum = 0;
+        for(int i = 1; i < n; i++)
+        {
+            if(n % i == 0) sum += i;
+        }
+        return sum == n;   // shut up error message
     }
 
     /*
@@ -227,22 +286,32 @@ n
      *
      *   Question: What is special about the number 2147483647?
      */
-    public static void findPerfect()
+    private static void findPerfect()
     {
-        // fill in code here
+        for(int i = 1; true; i++)
+        {
+            if(Math.sqrt(i) % 1 == 0) System.out.println(i);
+        }
     }
 
     /*
      * Thoroughly test all of your functions above.
      */
+
     public static void main(String[] args)
     {
-
         System.out.println(appendChecksum(91217) == 912170);
         System.out.println(appendChecksum(91217) != 912179); //negative test
         System.out.println(count7s(34879787) == 3);
         System.out.println(sum3or5(1000));
-        System.out.println(factor(7304692485435694493L));
+        stars(8);
+        triangle(10);
+        fizzbuzz(20);
+        System.out.println(isPalindrome(1234554321));
+        staircase(20);
+        System.out.println(perfect(6));
+        System.out.println(!perfect(7));
+        findPerfect();
     }
 
 }
