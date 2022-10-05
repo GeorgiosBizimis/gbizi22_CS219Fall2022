@@ -47,11 +47,11 @@ public final class Exercise66
         {
             final char ch = word.charAt(i);
             final int tiles_index = tiles.indexOf(ch);
-            try
+            try // tries to remove the character from the string
             {
                 tiles = tiles.substring(0, tiles_index) + tiles.substring(tiles_index + 1);
             }
-            catch(Exception e)
+            catch(Exception e) // fails if character index given by line49 is -1
             {
                 return false;
             }
@@ -75,6 +75,8 @@ public final class Exercise66
         System.out.println(!canSpellLame("hashmap", "hsdfhiumpiu"));
         System.out.println(canSpellLame("macintosh", "cmansfidghjto"));
         System.out.println(!canSpellLame("internationalization", "qwertyuiopasdfghjksdfogiuy"));
+
+        //Question: Which of the two methods is computationally faster?
     }
 
 }
