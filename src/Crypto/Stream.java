@@ -18,7 +18,7 @@ public final class Stream
         base_char = ' ';
     }
 
-    private static void secureRandomCleanAndDeclare()
+    private static void secureRandomDeclare()
     {
         try
         {
@@ -35,7 +35,7 @@ public final class Stream
     public static String E(final String clear, final int key, final boolean encrypt)
     {
         clearStringBuilder();
-        secureRandomCleanAndDeclare();
+        secureRandomDeclare();
         random.setSeed(key);
 
         for(int i = 0; i < clear.length(); i++)
@@ -52,8 +52,6 @@ public final class Stream
         
         return cipher_bldr.toString();
     }
-
-
 
     public static void main(String[] args)
     {
