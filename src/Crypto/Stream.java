@@ -43,8 +43,8 @@ public final class Stream
             final int shift;
             if(encrypt) shift = random.nextInt(100);
             else shift = -random.nextInt(100);
-
             System.out.println(shift);
+
             final int cipher_char_pos = Math.floorMod(clear.charAt(i) - base_char + shift, alphabet_length);
             final char cipher_char = (char) (cipher_char_pos + base_char);
             cipher_bldr.append(cipher_char);
