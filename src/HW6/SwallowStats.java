@@ -34,10 +34,8 @@ public final class SwallowStats
 
         double sum = 0;
         int count = 0;
-        double min = 0;
-        double max = 0;
-
-        boolean initialized = false;
+        double min = Double.POSITIVE_INFINITY;
+        double max = Double.NEGATIVE_INFINITY;
 
         while(true)
         {
@@ -49,18 +47,8 @@ public final class SwallowStats
                     System.out.println(number);
                     sum += number;
                     count++;
-
-                    if(initialized)
-                    {
-                        if(number < min) min = number;
-                        if(number > max) max = number;
-                    }
-                    else
-                    {
-                        min = Double.parseDouble(line);
-                        max = Double.parseDouble(line);
-                        initialized = true;
-                    }
+                    if(number < min) min = number;
+                    if(number > max) max = number;
                 }
             }
             catch(Exception e)
@@ -70,8 +58,8 @@ public final class SwallowStats
         }
         System.out.println();
         System.out.printf("The average swallow speed is %.2f\n", sum/count);
-        System.out.printf("The minimum swallow speed is %.2f\n", min);
-        System.out.printf("The maximum swallow speed is %.2f\n", max);
+        System.out.printf("The minimum swallow speed is %.1f\n", min);
+        System.out.printf("The maximum swallow speed is %.1f\n", max);
     }
 
     public static void main(String[] args)
