@@ -55,8 +55,8 @@ public final class Stream
 
     public static void main(String[] args)
     {
-        System.out.println(E("java", 20, true)); //encryption test
-        System.out.println(E("/S&Y", 20, false));
+        System.out.println(E("java", 10, true)); //encryption test
+        System.out.println(E("j\\?v", 10, false));
     }
     
 }
