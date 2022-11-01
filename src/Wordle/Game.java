@@ -72,6 +72,11 @@ public class Game
         System.out.println(word);
         System.out.println(indexOf(word, words));
         System.out.println(binarySearch(words, word, 0, words.length - 1));
+        System.out.println(Math.floorDiv(-9, 2));
+        System.out.println(-9/2);
+        System.out.println(Math.floorMod(-9, 2));
+        System.out.println(-9%2);
+        System.out.println("sdfssdf");
     }
 
 }

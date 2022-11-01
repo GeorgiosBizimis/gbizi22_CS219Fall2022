@@ -213,7 +213,7 @@ you
             n /= 10;
         }
 
-        return original == reversed; // shut up error message
+        return original == reversed;
     }
 
     /*
